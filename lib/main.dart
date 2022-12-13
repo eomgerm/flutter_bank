@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bank/widgets/button.dart';
 
 void main() {
   runApp(App());
@@ -9,12 +10,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFF181818),
+        backgroundColor: const Color(0xFF181818),
         body: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Row(
@@ -23,7 +25,7 @@ class App extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
+                      const Text(
                         'Hey, Gihoon',
                         style: TextStyle(
                           color: Colors.white,
@@ -42,6 +44,44 @@ class App extends StatelessWidget {
                   )
                 ],
               ),
+              const SizedBox(
+                height: 120,
+              ),
+              Text(
+                'Total balance',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.8),
+                  fontSize: 22,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                '\$5 194 482',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 44,
+                    fontWeight: FontWeight.w800),
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Button(
+                    text: "Transfer",
+                    backgroundColor: Color(0xFFF1B33B),
+                    textColor: Colors.black,
+                  ),
+                  Button(
+                    text: "Request",
+                    backgroundColor: Color(0xFF1F2123),
+                    textColor: Colors.white,
+                  )
+                ],
+              )
             ],
           ),
         ),
